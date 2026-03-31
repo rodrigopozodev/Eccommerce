@@ -5,12 +5,13 @@ import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { User } from '../interfaces/user.interface';
 import { isPlatformBrowser } from '@angular/common';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'https://zapaspro-back.onrender.com/api/users';
+  private apiUrl = `${environment.apiUrl}/users`;
   private authenticated = false;
   public userRole: string | null = null;
   private currentUser: any;
